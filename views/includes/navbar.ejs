@@ -1,0 +1,30 @@
+<nav>
+  <div class="nav-elem">
+    <input type="checkbox" id="check" />
+    <label for="check" class="checkbtn">
+      <i class="fas fa-bars"></i>
+    </label>
+    <label class="logo"><a href="/listings"><i class="fa-brands fa-vaadin"></i> Explore</a></label>
+    
+    <ul>
+      <% if(!currUser) { %>
+      <li><a class="active" href="/listings/new">Airbnb your home</a></li>
+      <li>
+        <b><a href="/signup">Sign Up</a></b>
+      </li>
+      <li>
+        <b><a href="/login">Login</a></b>
+      </li>
+      <% } %> <% if(currUser) { %>
+      <div class="logged-in">
+        <a class="nav-link nav-after" href="/listings/new">Airbnb your home</a>
+        <p class="username" style="font-size: 1.1rem;">Hello, <%= currUser.username %></p>
+        <a class="nav-link-2" href="/logout">
+          <i class="fa-solid fa-power-off" style="margin-top: 1rem"></i>
+          <b>Log out</b></a
+        >
+        <% } %>
+      </div>
+    </ul>
+  </div>
+</nav>
